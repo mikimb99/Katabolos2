@@ -14,8 +14,18 @@ class TestBolos(unittest.TestCase):
         ronda = [(1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 1)
+
+    def test_puntosenotra_tirada(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (2, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = bolos.puntaje(ronda)
+        self.assertEqual(resultado, 2)
+
     def test_sumatirada1(self):
         bolos = Bolos()
         ronda = [(1, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 2)
+
+    def test_suma_otratirada(self):
+        pass
