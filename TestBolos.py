@@ -29,7 +29,12 @@ class TestBolos(unittest.TestCase):
 
     def test_suma_tirada(self):
         bolos = Bolos()
-        ronda = [(0, 0), (2, 4), (0, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        ronda = [(0, 0), (2, 4), (0, 3), (0, 0), (2, 4), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         #print(len(ronda)) comprobamos si el len lo está realizando correctamente
-        self.assertEqual(resultado, 9)
+        self.assertEqual(resultado, 15)
+    def test_pleno_solo(self):
+        bolos = Bolos()
+        ronda = [(0, 0), ('X', 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = bolos.puntaje(ronda)
+        self.assertEqual(resultado, 10)
