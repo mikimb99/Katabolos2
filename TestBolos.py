@@ -53,3 +53,13 @@ class TestBolos(unittest.TestCase):
         ronda = [(0, 0), (8, 2), (4, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 18)
+    def test_plenoysemi(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (8, 2), (4, 0), (0, 0), (10, 0), (4, 2), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = bolos.puntaje(ronda)
+        self.assertEqual(resultado, 18+10+12)
+    def test_rondaextra(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (8, 2), (4, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (10, 0),(2,2)]
+        resultado = bolos.puntaje(ronda)
+        self.assertEqual(resultado, 18+18)
