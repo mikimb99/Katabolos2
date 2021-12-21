@@ -35,6 +35,11 @@ class TestBolos(unittest.TestCase):
         self.assertEqual(resultado, 15)
     def test_pleno_solo(self):
         bolos = Bolos()
-        ronda = [(0, 0), ('X', 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        ronda = [(0, 0), (10, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 10)
+    def test_pleno_ypuntos(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (10, 0), (4, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = bolos.puntaje(ronda)
+        self.assertEqual(resultado, 18)
