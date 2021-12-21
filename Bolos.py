@@ -8,7 +8,8 @@ class Bolos(unittest.TestCase):
             if ronda[i][0]==10: #hay un pleno o más
                 suma= suma+ sum(ronda[i])+sum(ronda[i+1])
             elif sum(ronda[i])==10: #hay semipleno
-                suma= suma+ sum(ronda[i])+ronda[i+1]
+
+                suma= suma+ sum(ronda[i])+ronda[i+1][0]
             else:
                 suma= suma+ sum(ronda[i])
 
