@@ -4,8 +4,9 @@ class Bolos(unittest.TestCase):
 
     def puntaje(self,ronda):
         suma=0
-        if len(ronda)<10:
-            for i in range (0,len(ronda)):
-                suma= suma + sum(ronda[i])
+        for i in range (0,len(ronda)):
+            if i<10:
+                    suma= suma + sum(ronda[i])
 
-        return suma
+
+            return suma
