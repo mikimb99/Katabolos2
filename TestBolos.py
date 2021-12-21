@@ -15,17 +15,21 @@ class TestBolos(unittest.TestCase):
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 1)
 
-    def test_puntosenotra_tirada(self):
-        bolos = Bolos()
-        ronda = [(0, 0), (2, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
-        resultado = bolos.puntaje(ronda)
-        self.assertEqual(resultado, 2)
-
     def test_sumatirada1(self):
         bolos = Bolos()
         ronda = [(1, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 2)
 
-    def test_suma_otratirada(self):
-        pass
+    def test_puntosenotra_tirada(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (2, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = bolos.puntaje(ronda)
+        self.assertEqual(resultado, 2)
+
+    def test_suma_tirada(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (2, 4), (0, 3), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = bolos.puntaje(ronda)
+        #print(len(ronda)) comprobamos si el len lo está realizando correctamente
+        self.assertEqual(resultado, 9)
