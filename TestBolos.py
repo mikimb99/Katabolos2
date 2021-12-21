@@ -45,9 +45,9 @@ class TestBolos(unittest.TestCase):
         self.assertEqual(resultado, 28)
     def testplenosvarios(self):
         bolos = Bolos()
-        ronda = [(0, 0), (10, 0), (4, 0), (10, 0), (5, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        ronda = [(0, 0), (10, 0), (4, 0), (10, 0), (5, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
-        self.assertEqual(resultado, 14+4+15+5)
+        self.assertEqual(resultado, 14+4+15+5+2)
     def test_semiplenopuntos(self):
         bolos = Bolos()
         ronda = [(0, 0), (8, 2), (4, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
@@ -60,6 +60,12 @@ class TestBolos(unittest.TestCase):
         self.assertEqual(resultado, 18+10+12)
     def test_rondaextra(self):
         bolos = Bolos()
-        ronda = [(0, 0), (8, 2), (4, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (10, 0),(2,2)]
+        ronda = [(0, 0), (8, 2), (4, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (10, 0), (2, 1)]
         resultado = bolos.puntaje(ronda)
-        self.assertEqual(resultado, 18+18)
+        print(len(ronda))
+        self.assertEqual(resultado, 18+10+6)
+    def test_2rondaextra(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (8, 2), (4, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (10, 0),(10,0),(0,1)]
+        resultado = bolos.puntaje(ronda)
+        self.assertEqual(resultado, 18+10+10+2)
