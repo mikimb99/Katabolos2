@@ -8,4 +8,4 @@ class TestBolos(unittest.TestCase):
         bolos = Bolos()
         ronda = [(0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado= bolos.puntaje(ronda)
-        self.assertEquals(resultado,0)
+        self.assertEqual(resultado,0)
