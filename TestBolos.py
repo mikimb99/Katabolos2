@@ -9,19 +9,19 @@ class TestBolos(unittest.TestCase):
         ronda = [(0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado= bolos.puntaje(ronda)
         self.assertEqual(resultado,0)
-    def test_tirada_1_primeratirada(self):
+    def test_tirada_1_primeratirada(self): #=
         bolos = Bolos()
         ronda = [(1, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 1)
 
-    def test_sumatirada1(self):
+    def test_sumatirada1(self): #=
         bolos = Bolos()
         ronda = [(1, 1), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 2)
 
-    def test_puntosenotra_tirada(self):
+    def test_puntosenotra_tirada(self): #=
         bolos = Bolos()
         ronda = [(0, 0), (2, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
@@ -33,13 +33,23 @@ class TestBolos(unittest.TestCase):
         resultado = bolos.puntaje(ronda)
         #print(len(ronda)) comprobamos si el len lo está realizando correctamente
         self.assertEqual(resultado, 15)
-    def test_pleno_solo(self):
+    def test_pleno_solo(self): #=
         bolos = Bolos()
         ronda = [(0, 0), (10, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 10)
     def test_pleno_ypuntos(self):
         bolos = Bolos()
-        ronda = [(0, 0), (10, 0), (4, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        ronda = [(0, 0), (10, 0), (4, 5), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = bolos.puntaje(ronda)
+        self.assertEqual(resultado, 28)
+    def testplenosvarios(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (10, 0), (4, 0), (10, 0), (5, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado = bolos.puntaje(ronda)
+        self.assertEqual(resultado, 14+4+15+5)
+    def test_semiplenopuntos(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (8, 2), (4, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
         resultado = bolos.puntaje(ronda)
         self.assertEqual(resultado, 18)
