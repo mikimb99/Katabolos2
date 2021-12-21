@@ -1,4 +1,11 @@
 import unittest
+from Bolos import Bolos
+
 
 class TestBolos(unittest.TestCase):
-    pass
+
+    def test_tiradassuman0(self):
+        bolos = Bolos()
+        ronda = [(0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0), (0, 0)]
+        resultado= bolos.puntaje(ronda)
+        self.assertEquals(resultado,0)
